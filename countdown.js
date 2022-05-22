@@ -10,7 +10,7 @@ const currentYear = new Date().getFullYear();
 // 来年の値を取得
 // const nextYear = currentYear + 1;
 // 来年の1月1日00:00:00のDateオブジェクトを取得
-const newYearTime = new Date(`March 16 2023 00:00:00`);
+const newYearTime = new Date(`May 22 2022 14:40:50`);
 
 // 来年の値をDOMに追加
 // year.innerText = nextYear;
@@ -32,11 +32,20 @@ function updateCountdown() {
   // 秒を計算
   const s = Math.floor(diff / 1000) % 60;
 
+  if (diff < 0) {
+    clearTimeout.updateCountdown;
+    diff = 0;
+
+    updateTimer(diff);
+    return
+  }
+
   // 取得した時間をDOMに追加
   days.innerText = d;
   hours.innerText = h < 10 ? '0' + h : h;
   minutes.innerText = m < 10 ? '0' + m : m;
   seconds.innerText = s < 10 ? '0' + s : s;
+
 }
 
 // ページロード時に関数を実行
